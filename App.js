@@ -1,16 +1,31 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { css } from './assets/css/Css';
-import { Text, View } from 'react-native';
-import Page from './views/Page';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Login, Home, Rastreio } from './views';
+
 
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={css.container}>
-      <Text>Teste</Text>
-      <Page/>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: "Fast and Furious",
+            headerStyle: {backgroundColor: '#F58634'},
+            headerTintColor: '#333',
+            headerTitleAlign:'center',
+            headerTitleStyle:{fontWeight:'bold'}
+          }}
+        />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Rastreio" component={Rastreio} />
+      </Stack.Navigator>
+      <StatusBar/>
+    </NavigationContainer>
   );
 }

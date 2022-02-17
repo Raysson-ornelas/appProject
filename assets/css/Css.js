@@ -7,6 +7,17 @@ const css = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    containerHome:{
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    buttonHome:{
+        fontSize: 25,
+        color:'white',
+    },
     textPage:{
         backgroundColor: 'orange',
         padding: 20
