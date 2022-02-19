@@ -22,7 +22,7 @@ export default function App() {
             headerTitleStyle:{fontWeight:'bold'}
           }}
         />
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen options={{headerShown: false}} name="Login" component={Login} />
         <Stack.Screen name="Rastreio" component={Rastreio} />
       </Stack.Navigator>
       <StatusBar/>
