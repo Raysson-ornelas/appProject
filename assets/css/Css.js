@@ -1,9 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 
 const css = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#FFF',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -23,9 +23,6 @@ const css = StyleSheet.create({
         color:'white',
         paddingRight: 20
     },
-    darkbg:{
-        backgroundColor: '#080607'
-    },
     loginMsg:(text)=>({
         fontWeight: 'bold',
         fontSize: 22,
@@ -34,27 +31,73 @@ const css = StyleSheet.create({
         marginBottom: 15,
         display: text
     }),
-    loginInput:{
-        backgroundColor: '#fff',
-        fontSize: 19,
-        padding: 7,
-        marginBottom: 15
+    logo:{
+        marginBottom: Platform.OS === 'android' ? '5%' : '8%',
     },
-    loginLogo:{
-        marginBottom: 10,
+    input:{
+        width: '90%',
+        height: 42,
+        marginBottom: 20,
+        padding: 8,
+        borderRadius: 5,
+        borderWidth:1,
+        borderColor: '#E0E0E0',
+        backgroundColor: '#F4F3F3',
     },
-    loginForm:{
-        width: '80%',
+    forgotContainer:{
+        width: '90%',
+        alignItems: 'flex-end'
     },
-    buttonLogin:{
-        fontSize: 20,
-        color:'white',
-        paddingRight: 10,
+    forgotText:{
+        color: '#399fff',
     },
-    buttonRegiter:{
-        fontSize: 20,
-        color:'white',
-        paddingRight: 10,
+    loginButton:{
+        marginTop: '5%',
+        backgroundColor:'#399fff',
+        width: '90%',
+        height: 42,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 5,
+    },
+    loginText:{
+        color: '#FFF',
+        fontSize: 17,
+    },
+    facebookContainer:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: '15%'
+    },
+    facebookText:{
+        color: '#399fff',
+        paddingLeft: 8,
+        fontSize: 15,
+    },
+    divisor:{
+        marginTop: '10%',
+        flexDirection: 'row',
+        width: '90%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    divisorLine:{
+        width: '45%',
+        height: 2,
+        backgroundColor:'#EFEDED',
+        borderRadius: 5,
+    },
+    signUpContainer:{
+        flexDirection: 'row',
+        marginTop: '10%',
+    },
+    signUpText:{
+        color: '#C4C4C4',
+        paddingRight: 5,
+    },
+    signUpButton:{
+        color: '#399fff',
+        fontWeight: 'bold',
     }
 });
 export {css};

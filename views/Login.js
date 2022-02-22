@@ -1,47 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { KeyboardAvoidingView, Text,TextInput, Image,View, Platform } from 'react-native';
+import React from 'react';
+import { Image, View, TextInput, TouchableOpacity, Text } from 'react-native';
 import { css } from '../assets/css/Css';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function Login(){
-    const [display, setDisplay] = useState('none');
     return(
-        <KeyboardAvoidingView
-            style={[css.container, css.darkbg]}
-            behavior={Platform.OS == "ios" ? "padding" : "height"}
-        >
-            <View style={css.loginLogo}>
-                <Image source={require('../assets/img/icon.png')}/>
+        <View style={css.container}>
+            <Image
+                source={require('../assets/img/meow.png')}
+                style={css.logo}
+            />
+
+            <TextInput
+                placeholder="Celular, username ou email"
+                style={css.input}
+            />
+
+            <TextInput
+                placeholder="Sua Senha"
+                style={css.input}
+            />
+
+            <View style={css.forgotContainer}>
+                <TouchableOpacity>
+                    <Text style={css.forgotText}>Esqueceu sua senha?</Text>
+                </TouchableOpacity>
             </View>
-            <View>
-                <Text style={css.loginMsg(display)}>Usuário ou senha inválidos</Text>
+
+            <TouchableOpacity style={css.loginButton}>
+                <Text style={css.loginText}>Acessar</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={css.facebookContainer}>
+                <FontAwesome5 name="facebook" size={25} color="#399fff"/>
+                <Text style={css.facebookText}>Continue como Raysson</Text>
+            </TouchableOpacity>
+
+            <View style={css.divisor}>
+                <View style={css.divisorLine}></View>
+                <Text style={{marginHorizontal: '3%'}}>OU</Text>
+                <View style={css.divisorLine}></View>
             </View>
-            <View style={css.loginForm}>
-                <TextInput style={css.loginInput} placeholder='Usuário'/>
-                <TextInput style={css.loginInput} placeholder='Senha' secureTextEntry={true}/>
-                <View style={css.containerTwoButtons}>
-                    <Icon.Button
-                        name='login'
-                        size={30}
-                        backgroundColor= '#3b5998'
-                        onPress={() => setDisplay('flex')}
-                    >
-                        <Text style={css.buttonLogin}>
-                            Login
-                        </Text>
-                    </Icon.Button>
-                    <Icon.Button
-                        name='account-plus'
-                        size={30}
-                        backgroundColor= '#3b5998'
-                        onPress={() => setDisplay('flex')}
-                    >
-                        <Text style={css.buttonRegiter}>
-                            Cadastre-se
-                        </Text>
-                    </Icon.Button>
-                </View>
+
+            <View style={css.signUpContainer}>
+                <Text style={css.signUpText}>Não possui conta?</Text>
+                <TouchableOpacity>
+                    <Text style={css.signUpButton}>Cadastre-se</Text>
+                </TouchableOpacity>
+
             </View>
-        </KeyboardAvoidingView>
+        </View>
+
     );
 }

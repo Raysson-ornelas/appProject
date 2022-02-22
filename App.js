@@ -25,7 +25,7 @@ export default function App() {
         <Stack.Screen options={{headerShown: false}} name="Login" component={Login} />
         <Stack.Screen name="Rastreio" component={Rastreio} />
       </Stack.Navigator>
-      <StatusBar/>
+      <StatusBar backgroundColor='#FFF' translucent={false}/>
     </NavigationContainer>
   );
 }
